@@ -3,9 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 function ProductCard({ item }) {
-  console.log(item);
   return (
-    <div className="w-[23%] cursor-pointer">
+    <div className="w-[23%] cursor-pointer ">
       <div>
         <motion.img
           whileHover={{ scale: 1.1 }}

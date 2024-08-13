@@ -13,6 +13,9 @@ function Home() {
   const year = new Date().getFullYear();
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
+  const [mobileProducts, setMobileProducts] = useState([]);
+
+  const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(() => {
     const filteredTrendingProducts = products.filter(
@@ -22,8 +25,18 @@ function Home() {
     const filteredBestSalesProducts = products.filter(
       (item) => item.category === "sofa"
     );
+    const filteredmobileProducts = products.filter(
+      (item) => item.category == "mobile"
+    );
+
+    const filteredPopularProducts = products.filter(
+      (item) => item.category === "watch"
+    );
     setTrendingProducts(filteredTrendingProducts);
     setBestSalesProducts(filteredBestSalesProducts);
+    setMobileProducts(filteredmobileProducts);
+
+    setPopularProducts(filteredPopularProducts);
   }, []);
   return (
     <Helmet title={"Home"}>
@@ -67,7 +80,7 @@ function Home() {
         <h3 className="text-center font-bold text-2xl">Best Sales</h3>
         <ProductList data={bestSalesProducts} />
       </section>
-      <section className="container mx-auto bg-slate-900 my-10">
+      <section className="container mx-auto bg-slate-900 mt-10">
         <div className="flex items-center justify-between">
           <div>
             <h4 className="text-white text-base font-normal">Limited Offer</h4>
@@ -81,6 +94,18 @@ function Home() {
             <img src={counter} alt="" />
           </div>
         </div>
+      </section>
+      <section className="container mx-auto pt-10">
+        <h3 className="text-center font-bold text-2xl">New Arrivals</h3>
+
+        <ProductList data={mobileProducts} />
+      </section>
+      <section className="container mx-auto py-10">
+        <h3 className="text-center font-bold text-2xl py-4">
+          Popular Category
+        </h3>
+
+        <ProductList data={popularProducts} />
       </section>
     </Helmet>
   );

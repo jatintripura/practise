@@ -20,11 +20,11 @@ function Header() {
     },
   ];
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto sticky top-0 bg-slate-50 z-50">
       <div className="flex items-center justify-between py-4">
         <div className="flex items-center gap-x-1">
           <img className="w-8  h-auto font-bold" src={logo} alt="logo" />
-          <h2 className="font-medium text-xl">Multimart</h2>
+          <h2 className="font-medium text-xl">E-Shop</h2>
         </div>
         <div>
           <ul className="flex items-center gap-x-4">
