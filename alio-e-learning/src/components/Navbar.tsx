@@ -1,5 +1,5 @@
 import { IoMdMenu } from "react-icons/io";
-
+import { motion } from "framer-motion";
 const NavbarMenu = [
   {
     id: 1,
@@ -30,8 +30,13 @@ const NavbarMenu = [
 ];
 const Navbar = () => {
   return (
-    <nav>
-      <div className="container py-10 flex justify-between items-center">
+    <nav className="relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, ease: "easeInOut" }}
+        className="container py-10 flex justify-between items-center"
+      >
         {/* Logo section */}
         <div>
           <h1 className="font-bold text-2xl">The Coding Journey</h1>
@@ -52,16 +57,14 @@ const Navbar = () => {
                 </li>
               );
             })}
-            <button className="inline-block bg-primary text-white font-semibold rounded-lg  py-2 px-6 hover:bg-secondary duration-200 shadow-[0px_10px_8px_-7px_#ffd978] hover:shodow-[0px_10px_8px_-7px_#69a79c]">
-              Sign In
-            </button>
+            <button className="btn-primary">Sign In</button>
           </ul>
         </div>
         {/* Mobile hamburger menu section */}
         <div className="lg:hidden">
           <IoMdMenu className="text-4xl" />
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 };
