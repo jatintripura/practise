@@ -3,14 +3,26 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        primary: "#24AFB5",
-        secondary: "#24AFB5",
-        paragraph: "#585757",
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
       },
-      screens: {
-        mobile: "640px", // Medium screens (default Tailwind)
-        desktop: "1024px", // Large screens (default Tailwind)
+      colors: {
+        primary: "#1c1c1c",
+        secondary: "#585757",
+        accent: "#24AFB5",
+        light: "#f7f7f7",
+        dark: "#333333",
+        dark2: "#999999",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "1rem",
+          sm: "2rem",
+          lg: "4rem",
+          xl: "5rem",
+          "2xl": "6rem",
+        },
       },
     },
   },

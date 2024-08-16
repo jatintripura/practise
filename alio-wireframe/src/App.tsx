@@ -1,132 +1,260 @@
-import React from "react";
-import Title from "./components/ui/Title";
-import logo from "./assets/logo.png";
-import Button from "./components/Button";
-import hero from "./assets/background.png";
-import icon from "./assets/icon.png";
-import logitech from "./assets/logitech.png";
-import google from "./assets/google.png";
-import facebook from "./assets/facebook.png";
-import linkdin from "./assets/linkdin.png";
-import philip from "./assets/philips.png";
-import { FiMenu } from "react-icons/fi";
-import Paragraph from "./components/ui/Paragraph";
-import device from "./assets/Device.png";
-const App: React.FC = () => {
+import { MdStar } from "react-icons/md";
+import Hero from "./components/hero/Hero";
+import iphone from "./assets/iPhone X.png";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import lgo from "./assets/logo.png";
+const textHeading = [
+  {
+    id: 1,
+    titile: "Heading",
+    description:
+      "You will likely be required to install the fixed mounts. These are what will keep the apparatus stable and secure with your computer monitor in it. Follow directions carefully so that you can be sure to get everything.",
+    link: "Learn more",
+  },
+  {
+    id: 2,
+    titile: "Heading",
+    description:
+      "You will likely be required to install the fixed mounts. These are what will keep the apparatus stable and secure with your computer monitor in it. Follow directions carefully so that you can be sure to get everything.",
+    link: "Learn more",
+  },
+  {
+    id: 3,
+    titile: "Heading",
+    description:
+      "You will likely be required to install the fixed mounts. These are what will keep the apparatus stable and secure with your computer monitor in it. Follow directions carefully so that you can be sure to get everything.",
+    link: "Learn more",
+  },
+];
+const status = [
+  {
+    id: 1,
+    titile: "23.4K",
+    subTitle: "Active Merchants",
+  },
+  {
+    id: 2,
+    titile: "$3.4K",
+    subTitle: "Revenues in 2018",
+  },
+  {
+    id: 3,
+    titile: "873K",
+    subTitle: "Downloads",
+  },
+  {
+    id: 4,
+    titile: "87+",
+    subTitle: "Countries",
+  },
+  {
+    id: 5,
+    titile: "$58K",
+    subTitle: "Revenue Per Hour",
+  },
+];
+const step = [
+  {
+    id: 1,
+    title: "Step 1",
+    description:
+      "Third you will likely be required to install the fixed mounts. These are what will keep the apparatus stable and secure.",
+  },
+  {
+    id: 2,
+    title: "Step 2",
+    description:
+      "Third you will likely be required to install the fixed mounts. These are what will keep the apparatus stable and secure.",
+  },
+  {
+    id: 3,
+    title: "Step 3",
+    description:
+      "Third you will likely be required to install the fixed mounts. These are what will keep the apparatus stable and secure.",
+  },
+];
+const App = () => {
   return (
-    <>
-      <div className="container mx-auto">
-        <section className="flex items-center justify-between py-6">
-          <div className="flex items-center gap-x-7">
-            <img src={logo} alt="logo" />
-            <ul className="mobile:hidden    desktop:flex gap-x-7   ">
-              <li className="hover:underline">
-                <a href="#">
-                  <Title fontWeight="normal">Frist Link</Title>
+    <div>
+      <Hero />
+      <section className="pb-20">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-9 px-10 md:px-0 ">
+            {textHeading.map((item) => (
+              <div className="flex flex-col items-start gap-y-4">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#969696] ">
+                  <MdStar className="text-lg text-primary" />
+                </div>
+                <h1 className="text-xl text-primary font-bold">
+                  {item.titile}
+                </h1>
+                <p className="text-secondary !leading-snug">
+                  {item.description}
+                </p>
+                <a href="#" className="text-accent">
+                  {item.link}
                 </a>
-              </li>
-              <li className="hover:underline">
-                <a href="#">
-                  <Title fontWeight="normal">Second Link</Title>
-                </a>
-              </li>
-              <li className="hover:underline">
-                <a href="#">
-                  <Title fontWeight="normal">Third Link</Title>
-                </a>
-              </li>
-              <li className="hover:underline">
-                <a href="#">
-                  <Title fontWeight="normal">Four Link</Title>
-                </a>
-              </li>
-            </ul>
+              </div>
+            ))}
           </div>
-          <div className="mobile:hidden desktop:flex items-center gap-x-4">
-            <a className="hover:underline" href="#">
-              <Title fontWeight="normal" className="text-secondary">
-                Five Link
-              </Title>
-            </a>
-            <Button className="flex gap-x-4 items-center">
-              <span>Button</span>
-              <span>
-                <img src={icon} alt="button-icon" />
-              </span>
-            </Button>
+        </div>
+      </section>
+      <section className="pt-10 pb-20">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-10 md:px-0">
+            {status.map((item) => (
+              <div className="flex flex-col items-start gap-y-2">
+                <h1 className="text-6xl font-bold text-primary ">
+                  {item.titile}
+                </h1>
+                <p className="text-secondary text-lg">{item.subTitle}</p>
+              </div>
+            ))}
           </div>
-          <div className="desktop:hidden">
-            <span>
-              <FiMenu className="w-10 h-auto" />
-            </span>
+        </div>
+      </section>
+      <section className="py-10">
+        <div className="container flex flex-col items-center justify-center gap-y-10">
+          <div className="max-w-[700px] flex flex-col items-center justify-center gap-y-8">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary">
+              Short heading
+            </h1>
+            <p className="text-center text-secondary text-lg">
+              Each and every one of us has that moment when we are suddenly
+              stunned when we come face to face with the enormity of the
+              universe.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10">
+            {step.map((item) => (
+              <div className="flex flex-col items-center justify-center gap-4">
+                <div className="bg-[#DBDBDB] w-14 h-14 rounded-full flex items-center justify-center ">
+                  <MdStar className="text-lg text-primary" />
+                </div>
+                <h1 className="text-2xl font-semibold text-primary">
+                  {item.title}
+                </h1>
+                <p className="text-lg text-secondary !leading-snug">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div className="flex flex-col items-start gap-5">
+              <div className="bg-[#DBDBDB] w-14 h-14 rounded-full flex items-center justify-center ">
+                <MdStar className="text-lg text-primary" />
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary">
+                Heading
+              </h1>
+              <p className="text-lg text-secondary leading-snug">
+                The beauty of astronomy is that anybody can do it. From the
+                tiniest baby to the most advanced astrophysicist, there is
+                something for anyone who wants to enjoy astronomy.
+              </p>
+              <a href="#" className="text-lg text-accent">
+                Learn More
+              </a>
+            </div>
+            <div className="flex items-center justify-center">
+              <img src={iphone} alt="iphone" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div className="container py-20">
+          <div className="flex items-center gap-4 pb-12">
+            <img src={lgo} alt="logo icon" />
+            <h1 className="text-2xl font-bold">Sections</h1>
+          </div>
+          <div className="flex flex-col md:flex-row items-start  justify-between">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-10 px-10 md:px-0  ">
+              <div className="space-y-6">
+                <h3 className=" text-lg font-bold text-primary">Category </h3>
+                <ul className="text-lg text-secondary space-y-2">
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                </ul>
+              </div>
+              <div className="space-y-6">
+                <h3 className=" text-lg font-bold text-primary">Category </h3>
+                <ul className="text-lg text-secondary space-y-2">
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                </ul>
+              </div>
+              <div className="space-y-6">
+                <h3 className=" text-lg font-bold text-primary">Category </h3>
+                <ul className="text-lg text-secondary space-y-2">
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                  <li>Frist Link</li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex flex-col gap-y-4 w-[50%] items-end ">
+              <h1 className="text-xl font-bold text-primary py-2">
+                Link Below
+              </h1>
+              <div className="flex items-center gap-2">
+                <FaFacebook className="text-lg text-secondary" />
+                <span className="text-lg font-semibold text-primary">
+                  Facebook
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaInstagram className="text-lg text-secondary" />
+                <span className="text-lg font-semibold text-primary">
+                  Instagram
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaTwitter className="text-lg text-secondary" />
+                <span className="text-lg font-semibold text-primary">
+                  Twitter
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaYoutube className="text-lg text-secondary" />
+                <span className="text-lg font-semibold text-primary">
+                  Youtube
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section className="bg-[#f7f7f7] py-4">
+          <div className="container flex items-center justify-between">
+            <div>
+              <p className="text-xs text-secondary">
+                © Copyright 2020 Pixsellz - Premium UI Goods for Designers
+              </p>
+            </div>
+            <div>
+              <ul className="flex items-center gap-x-4 text-xs text-secondary">
+                <li>Frist Link</li>
+                <li>Frist Link</li>
+                <li>Frist Link</li>
+              </ul>
+            </div>
           </div>
         </section>
-        <section className="pt-10">
-          <div className="mobile:flex flex-col items-start gap-y-5 desktop:flex-row  desktop:items-center justify-around">
-            <div className="w-full desktop:w-[50%]">
-              <img src={hero} alt="hero-image" />
-            </div>
-            <div className="flex flex-col gap-y-5 w-[70%] desktop:w-[50%]">
-              <Title
-                fontWeight="bold"
-                className="mobile:text-4xl desktop:text-5xl"
-              >
-                Two line long header example for web
-              </Title>
-              <Paragraph className="text-paragraph">
-                So youre trying to surf a site like myspace, hotmail or yahoo
-                mail from work or school and its blocked
-              </Paragraph>
-              <div>
-                <Button>Button</Button>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col items-start gap-y-5 pt-10 w-full">
-            <Title fontWeight="bold">Partners</Title>
-            <div className="w-full flex flex-wrap items-center justify-around  gap-x-4 gap-y-4 ">
-              <div>
-                <img src={logitech} alt="logitech-icon" />
-              </div>
-              <div>
-                <img src={google} alt="google-icon" />
-              </div>
-              <div>
-                <img src={facebook} alt="facebook-icon" />
-              </div>
-              <div>
-                <img src={linkdin} alt="linkdin-icon" />
-              </div>
-              <div>
-                <img src={philip} alt="philip-icon" />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="flex items-center justify-center gap-x-16 pt-20">
-          <div className="flex flex-col gap-5 items-center w-1/2">
-            <Title fontWeight="bold" className="text-sm text-center">
-              caps heading
-            </Title>
-            <Title className="text-5xl" fontWeight="bold">
-              Two line long header example for web
-            </Title>
-            <Paragraph className="text-paragraph">
-              You will likely be required to install the fixed mounts. These are
-              what will keep the apparatus stable and secure with your computer
-              monitor in it. Follow directions carefully so that you can be sure
-              to get everything.
-            </Paragraph>
-            <Button variant="outline" className=" text-primary">
-              Learn More
-            </Button>
-          </div>
-          <div>
-            <img src={device} alt="device" />
-          </div>
-        </section>
-      </div>
-    </>
+      </footer>
+    </div>
   );
 };
+
 export default App;

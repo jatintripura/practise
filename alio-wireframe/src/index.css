@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-all {
+    @apply bg-accent text-white py-3 px-6 rounded text-lg font-semibold;
+  }
+}
