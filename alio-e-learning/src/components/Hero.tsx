@@ -75,7 +75,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
               src={blob}
               alt="hero-svg"
-              className="absolute -bottom-34 w-[800px] md:w-[1500px] z-[1] hidden md:block"
+              className="absolute -bottom-32 w-[1000px] md:w-[1500px] z-[1] hidden md:block"
             />
           </div>
         </div>
