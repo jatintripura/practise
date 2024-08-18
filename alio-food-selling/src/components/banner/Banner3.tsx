@@ -1,26 +1,27 @@
 import { motion } from "framer-motion";
+import banner from "../../assets/banner-bg.jpg";
+import { fadeLeft, fadeUp } from "../utility/Animation";
 
+const bgStyle = {
+  backgroundImage: `url(${banner})`,
+  backgoundPosition: "center",
+  backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+};
 const Banner3 = () => {
   return (
-    <section className="bg-secondary/10">
-      <div className="container grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0 py-14">
+    <section>
+      <div
+        style={bgStyle}
+        className="container grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0 py-14 rounded-3xl"
+      >
         {/* Banner Image */}
-        <div className="flex justify-center items-center">
-          <motion.img
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-            viewport={{ once: true }}
-            src={banner}
-            alt="banner image"
-            className="w-[300px] md:max-w-[400px] h-full object-cover drop-shadow"
-          />
-        </div>
+        <div></div>
         {/* Banner text */}
         <div className="flex flex-col justify-center">
           <div className="text-center md:text-left space-y-4 lg:max-w-[400px]">
             <motion.h1
-              variants={fadeUp(0.5)}
+              variants={fadeLeft(0.5)}
               initial="hidden"
               animate="visible"
               viewport={{ once: true }}
@@ -29,7 +30,7 @@ const Banner3 = () => {
               Brand Info
             </motion.h1>
             <motion.p
-              variants={fadeUp(0.7)}
+              variants={fadeLeft(0.7)}
               initial="hidden"
               animate="visible"
               viewport={{ once: true }}
@@ -39,7 +40,7 @@ const Banner3 = () => {
               nesciunt beatae nobis?
             </motion.p>
             <motion.p
-              variants={fadeUp(0.9)}
+              variants={fadeLeft(0.9)}
               initial="hidden"
               animate="visible"
               viewport={{ once: true }}
@@ -48,7 +49,7 @@ const Banner3 = () => {
               consequuntur!
             </motion.p>
             <motion.div
-              variants={fadeUp(1.1)}
+              variants={fadeLeft(1.1)}
               initial="hidden"
               animate="visible"
               className="flex justify-center md:justify-start"
