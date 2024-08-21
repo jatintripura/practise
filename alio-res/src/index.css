@@ -7,3 +7,28 @@
     filter: drop-shadow(5px 5px 5px 5px rgba(0, 0, 0, 0.5));
   }
 }
+.slick-slider {
+  width: 900px;
+}
+.slick-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.slick-track {
+  width: 900px;
+}
+.slick-arrow::before {
+  color: coral;
+  font-size: 25px;
+  font-weight: 900;
+}
+.slick-prev {
+  top: 290px;
+  left: 850px;
+}
+.slick-next {
+  top: 290px;
+  right: 60px;
+}
